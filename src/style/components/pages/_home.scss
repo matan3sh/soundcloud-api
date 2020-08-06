@@ -1,0 +1,27 @@
+.home {
+  max-width: $container-width;
+  margin: 5rem auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  font-family: Varela;
+  display: flex;
+  justify-content: center;
+}
+
+.home__container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 1rem;
+}
+
+@media screen and (max-width: 1697px) {
+  .home__container {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media screen and (max-width: 1162px) {
+  .home__container {
+    grid-template-columns: 1fr;
+  }
+}
