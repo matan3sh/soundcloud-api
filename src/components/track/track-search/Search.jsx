@@ -1,38 +1,38 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { loadTracks, setSearches } from '../../../store/actions'
+import { loadTracks, setSearches } from '../../../store/actions';
 
 const Search = ({ loadTracks, searches, setSearches }) => {
-    const [text, setText] = useState('')
+  const [text, setText] = useState('');
 
-    const onSearchTracks = () => {
-        loadTracks(text)
-        let updatedSearches = [text, ...searches]
-        setSearches(updatedSearches)
-    }
-    
-    return (
-        <>
-            <div className="trackSearch__search">
-                <input type="text"
-                    placeholder="Search Track"
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                />
-                <button onClick={onSearchTracks}>GO</button>
-            </div>
-            <small className="trackSearch__clear" onClick={() => loadTracks()}><i className="fas fa-trash-alt"></i> Results</small>
-        </>
-    )
-}
+  const onSearchTracks = () => {
+    loadTracks(text);
+    let updatedSearches = [text, ...searches];
+    setSearches(updatedSearches);
+  };
+
+  return (
+    <>
+      <div className='trackSearch__search'>
+        <input
+          type='text'
+          placeholder='Search Track'
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <button onClick={onSearchTracks}>GO</button>
+      </div>
+    </>
+  );
+};
 
 const mapStateToProps = (state) => ({
-    searches: state.mainApp.searches,
+  searches: state.mainApp.searches,
 });
 
 const mapDispatchToProps = {
-    loadTracks,
-    setSearches
+  loadTracks,
+  setSearches,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

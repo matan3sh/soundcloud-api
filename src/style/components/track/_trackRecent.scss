@@ -1,59 +1,57 @@
-.trackRecent{
-    border: 1px #ccc dotted;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.25);
+.trackRecent {
+  border: 1px #ccc dotted;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.25);
 }
 
-.trackRecent__top{
-    display: flex;
-    justify-content: space-between;
+.trackRecent__top {
+  display: flex;
+  justify-content: space-between;
 }
 
 .trackRecent__clear {
-    font-size: 12px;
+  font-size: 12px;
 }
 
-.trackRecent__clear p{
-    padding: 5px;
-    border: #ccc 1px dotted;
-    margin-bottom: 10px;
-    border-radius: 5px;
+.trackRecent__clear p {
+  padding: 5px;
+  border: #ccc 1px dotted;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
-.trackRecent__clear p:hover{
-    background-color: rgb(236, 236, 236);
-    cursor: pointer;
+.trackRecent__clear p:hover {
+  background-color: rgb(236, 236, 236);
+  cursor: pointer;
 }
 
 .trackRecent i {
-    color: $primary-color
+  color: $primary-color;
 }
 
-.trackRecent__search{
-    background-color: rgb(236, 236, 236);
-    border-radius: 10px;    
-    width: 150px;
-    margin: 16px 0;
-    margin-left: 15px;
-    padding: 10px;
-    font-weight: 900;
+.trackRecent__search {
+  background-color: rgb(236, 236, 236);
+  border-radius: 10px;
+  width: 300px;
+  margin: 16px auto;
+  padding: 10px;
+  font-weight: 900;
 }
 
 .trackRecent__search:hover {
-    opacity: 0.8;
-    cursor: pointer;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .trackRecent__search h3 {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .trackRecent__search span {
-    position: relative;
-    top: 6px;
-
+  position: relative;
+  top: 6px;
 }
 
 @media screen and (max-width: 580px) {

@@ -9,23 +9,24 @@ import TrackRecent from '../track/track-recent/TrackRecent';
 
 const Home = ({ loadTracks, tracks, loadSearches, loadMood }) => {
   useEffect(() => {
-    setTimeout(() => loadTracks(), 1000);
-    loadSearches()
-    loadMood()
+    // setTimeout(() => loadTracks(), 1000);
+    loadSearches();
+    loadMood();
     // eslint-disable-next-line
   }, [loadTracks]);
 
   return (
     <div className='home'>
-      <div className="home__container">
-        {(!tracks.length) ? <Loader />
-          :
-          <>
-            <TrackSearch />
-            <TrackImage />
-            <TrackRecent />
-          </>
-        }
+      <div className='home__container'>
+        {/* {tracks === null ? (
+          <Loader />
+        ) : (
+          <> */}
+        <TrackSearch />
+        <TrackImage />
+        <TrackRecent />
+        {/* </>
+        )} */}
       </div>
     </div>
   );
@@ -38,6 +39,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   loadTracks,
   loadSearches,
-  loadMood
+  loadMood,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -8,10 +8,13 @@
   z-index: 1;
   width: 100%;
   top: 0;
+  color: $white-color;
   border-bottom: solid 1px $white-color;
-  background-color: $white-color;
+  background-color: $dark-color;
   opacity: 0.9;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .navbar ul {
@@ -19,8 +22,8 @@
   font-family: Varela;
 }
 
-.navbar a, .about__link {
-  color: #555 !important;
+.navbar a,
+.about__link {
   padding: 0.45rem;
   margin: 0 0.25rem;
   cursor: pointer;

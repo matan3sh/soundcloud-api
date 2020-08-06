@@ -1,8 +1,8 @@
 const initialState = {
-  tracks: [],
+  tracks: null,
   track: null,
   searches: [],
-  mood: ['list']
+  mood: ['list'],
 };
 
 export default function reducer(state = initialState, action) {
@@ -25,18 +25,18 @@ export default function reducer(state = initialState, action) {
     case 'SET_SEARCHES':
       return {
         ...state,
-        searches: action.payload
+        searches: action.payload,
       };
     case 'CLEAR_SEARCHES':
       return {
         ...state,
-        searches: []
+        searches: [],
       };
     case 'SET_MOOD':
       return {
         ...state,
-        mood: action.payload
-      }
+        mood: action.payload,
+      };
     default:
       return state;
   }
