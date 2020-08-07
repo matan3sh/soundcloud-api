@@ -3,7 +3,11 @@ import { Storage } from '../services/storageService';
 
 export const loadDefaultTracks = (filter = '') => async (dispatch) => {
   try {
-    let res = await service.query(filter);
+    let res = Storage.loadFromStorage('tracks');
+    if (!res) {
+      res = await service.query(filter);
+      Storage.storeToStorage('tracks', res);
+    }
     dispatch({ type: 'SET_DEFAULT_TRACKS', payload: res });
   } catch (err) {
     console.log(err);
