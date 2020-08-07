@@ -6,6 +6,7 @@
   box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.25);
   width: 550px;
   height: 710px;
+  position: relative;
 }
 
 .trackSearch__search {
@@ -34,6 +35,22 @@
   opacity: 0.8;
 }
 
+.trackSearch__clear {
+  padding: 5px;
+  border: #ccc 1px dotted;
+  margin-left: 2px;
+  border-radius: 5px;
+}
+
+.trackSearch__clear i {
+  color: $primary-color;
+}
+
+.trackSearch__clear:hover {
+  background-color: rgb(236, 236, 236);
+  cursor: pointer;
+}
+
 .trackSearch__preview {
   display: flex;
   margin: 0.5rem 0;
@@ -47,13 +64,18 @@
 }
 
 .trackSearch__preview p {
+  display: flex;
   margin: auto 0;
-  margin-left: 40px;
+}
+
+.trackSearch__preview div p {
+  margin: auto 15px;
+  font-weight: 900;
 }
 
 .trackSearch__preview p i {
-  color: #777;
-  margin-right: 5px;
+  color: #555;
+  margin: auto 5px;
 }
 
 .trackSearch__preview:hover {
@@ -71,19 +93,25 @@
 .trackSearch__preview h3 {
   margin: auto 0;
   font-weight: lighter;
-  color: #555;
+  color: #666;
 }
 
 .trackSearch__buttons {
   display: flex;
-  justify-content: space-between;
   padding: 0 15px;
+  position: absolute;
+  bottom: 5px;
 }
 
 .trackSearch__buttons span i {
   font-size: 2rem;
   color: $primary-color;
   cursor: pointer;
+}
+
+.trackSearch__buttons div {
+  position: relative;
+  left: 380px;
 }
 
 .trackSearch__buttons div span i {
@@ -95,16 +123,33 @@
   border-radius: 10px;
 }
 
+.trackSearch__list {
+  margin: 0rem 0;
+}
+
+.trackSearch__list p {
+  font-size: 14px;
+  margin-left: 5px;
+  margin-top: 1rem;
+}
+
+.trackSearch__list p i {
+  color: $primary-color;
+  margin-right: 5px;
+}
+
 .trackSearch__list-tile {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
+  margin-top: 2rem;
 }
 
 .trackSearch__preview-tile {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  margin: auto;
 }
 
 .trackSearch__preview-tile:hover {
@@ -131,7 +176,15 @@
 
 @media screen and (max-width: 580px) {
   .trackSearch {
-    width: 370px;
+    width: 350px;
+  }
+  .trackSearch__buttons div {
+    position: relative;
+    left: 180px;
+  }
+
+  .trackSearch__preview div {
+    font-size: 10px;
   }
 
   .trackSearch__list-tile {
@@ -141,5 +194,9 @@
 
   .trackSearch__preview-tile img {
     width: 50px;
+  }
+
+  .trackSearch__list p {
+    font-size: 10px;
   }
 }

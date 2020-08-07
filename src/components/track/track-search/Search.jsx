@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { loadTracks, setSearches } from '../../../store/actions';
+import { loadTracks, setSearches, clearTracks } from '../../../store/actions';
 
-const Search = ({ loadTracks, searches, setSearches }) => {
+const Search = ({
+  loadTracks,
+  searches,
+  setSearches,
+  clearTracks,
+  onPrevTracks,
+}) => {
   const [text, setText] = useState('');
 
   const onSearchTracks = () => {
+    onPrevTracks();
     loadTracks(text);
     let updatedSearches = [text, ...searches];
     setSearches(updatedSearches);
@@ -22,6 +29,15 @@ const Search = ({ loadTracks, searches, setSearches }) => {
         />
         <button onClick={onSearchTracks}>GO</button>
       </div>
+      <small
+        className='trackSearch__clear'
+        onClick={() => {
+          setText('');
+          clearTracks();
+        }}
+      >
+        <i className='fas fa-trash-alt'></i>
+      </small>
     </>
   );
 };
@@ -33,6 +49,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   loadTracks,
   setSearches,
+  clearTracks,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

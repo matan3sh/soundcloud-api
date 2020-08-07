@@ -32,7 +32,9 @@
 }
 
 .trackRecent__search {
-  background-color: rgb(236, 236, 236);
+  background-color: $dark-color;
+  opacity: 0.9;
+  color: $white-color;
   border-radius: 10px;
   width: 300px;
   margin: 16px auto;
@@ -49,13 +51,8 @@
   margin-left: 5px;
 }
 
-.trackRecent__search span {
-  position: relative;
-  top: 6px;
-}
-
 @media screen and (max-width: 580px) {
   .trackRecent {
-    width: 370px;
+    width: 350px;
   }
 }

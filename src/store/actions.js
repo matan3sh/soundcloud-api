@@ -1,6 +1,15 @@
 import service from '../services/service';
 import { Storage } from '../services/storageService';
 
+export const loadDefaultTracks = (filter = '') => async (dispatch) => {
+  try {
+    let res = await service.query(filter);
+    dispatch({ type: 'SET_DEFAULT_TRACKS', payload: res });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export const loadTracks = (filter = '') => async (dispatch) => {
   try {
     let res = await service.query(filter);
@@ -8,6 +17,10 @@ export const loadTracks = (filter = '') => async (dispatch) => {
   } catch (err) {
     console.log(err);
   }
+};
+
+export const clearTracks = () => (dispatch) => {
+  dispatch({ type: 'CLEAR_TRACKS' });
 };
 
 export const setTrack = (track) => (dispatch) => {

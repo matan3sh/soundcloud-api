@@ -3,25 +3,34 @@
   margin: 5rem auto;
   overflow: hidden;
   padding: 0 2rem;
-  font-family: Varela;
+  font-family: LucidaGrande;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.home__container{
+.home__container {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
+}
+
+.home h2 {
+  font-size: 22px;
 }
 
 @media screen and (max-width: 1697px) {
   .home__container {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 1162px) {
   .home__container {
     grid-template-columns: 1fr;
+  }
+
+  .home h2 {
+    font-size: 16px;
   }
 }

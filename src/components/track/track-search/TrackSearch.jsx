@@ -22,7 +22,7 @@ const TrackSearch = ({ tracks }) => {
 
   return (
     <div className='trackSearch'>
-      <Search />
+      <Search onPrevTracks={onPrevTracks} />
       {tracks === null ? (
         ''
       ) : (

@@ -1,4 +1,5 @@
 const initialState = {
+  defaultTracks: null,
   tracks: null,
   track: null,
   searches: [],
@@ -7,10 +8,20 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
+    case 'SET_DEFAULT_TRACKS':
+      return {
+        ...state,
+        defaultTracks: action.payload,
+      };
     case 'SET_TRACKS':
       return {
         ...state,
         tracks: action.payload,
+      };
+    case 'CLEAR_TRACKS':
+      return {
+        ...state,
+        tracks: null,
       };
     case 'SET_TRACK':
       return {

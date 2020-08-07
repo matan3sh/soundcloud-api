@@ -2,7 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setTrack, clearTrack } from '../../../store/actions';
 
-const TrackPreview = ({ track, setTrack, currTrack, clearTrack, mood }) => {
+const TrackPreview = ({
+  track,
+  setTrack,
+  currTrack,
+  clearTrack,
+  mood,
+  index,
+}) => {
   const durationFormatter = (duration) => {
     let seconds = parseInt((duration / 1000) % 60);
     let minutes = parseInt((duration / (1000 * 60)) % 60);
@@ -25,9 +32,10 @@ const TrackPreview = ({ track, setTrack, currTrack, clearTrack, mood }) => {
         <>
           <div>
             <img src={track.artwork_url} alt='play' />
+            <p>{index}.</p>
             <h3>
-              {track.title.length > 25
-                ? track.title.slice(0, 24) + '...'
+              {track.title.length > 32
+                ? track.title.slice(0, 31) + '...'
                 : track.title}
             </h3>
           </div>
