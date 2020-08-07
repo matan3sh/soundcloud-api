@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { clearSearches, loadTracks } from '../../../store/actions';
+import { clearSearches } from '../../../store/actions';
 import TrackRecentList from './TrackRecentList';
 
-const TrackRecent = ({ searches, clearSearches, loadTracks }) => {
+const TrackRecent = ({ searches, clearSearches }) => {
   return (
     <div className='trackRecent'>
       <div className='trackRecent__top'>
@@ -27,7 +27,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   clearSearches,
-  loadTracks,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TrackRecent);

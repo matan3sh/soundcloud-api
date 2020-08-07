@@ -7,7 +7,7 @@ import TrackImage from '../track/track-image/TrackImage';
 import TrackRecent from '../track/track-recent/TrackRecent';
 import Slider from '../layout/Slider';
 
-const Home = ({ loadTracks, tracks, loadSearches, loadMood }) => {
+const Home = ({ loadTracks, loadSearches, loadMood }) => {
   useEffect(() => {
     loadSearches();
     loadMood();
@@ -27,13 +27,9 @@ const Home = ({ loadTracks, tracks, loadSearches, loadMood }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  tracks: state.mainApp.tracks,
-});
-
 const mapDispatchToProps = {
   loadTracks,
   loadSearches,
   loadMood,
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(null, mapDispatchToProps)(Home);
